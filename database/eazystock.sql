@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-06-2026 a las 11:36:36
+-- Tiempo de generación: 01-06-2026 a las 14:20:57
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -48,8 +48,7 @@ INSERT INTO `asignaciones` (`id`, `trabajador_id`, `material_id`, `usuario_id`, 
 (3, 4, 10, NULL, '2026-05-23 21:06:46', NULL, 'Amsterdam', 'Se le asigna el 20/05/2026 temporalmente.'),
 (4, 4, 1, NULL, '2026-05-27 21:06:35', '2026-05-27 21:07:31', 'Amsterdam', 'Sustitucion portátil'),
 (5, 3, 1, NULL, '2026-05-27 21:19:53', NULL, 'Barcelona', ''),
-(6, 3, 2, 1, '2026-05-28 19:16:02', NULL, 'Barcelona', 'Asignado porque me da la real gana.'),
-(7, 1, 11, 1, '2026-05-29 16:43:16', NULL, 'Madrid', '');
+(8, 5, 12, 1, '2026-06-01 14:19:04', NULL, 'Zaragoza', 'Necesidad de tarjeta gráfica externa.');
 
 -- --------------------------------------------------------
 
@@ -94,10 +93,8 @@ INSERT INTO `material` (`id`, `tipo`, `marca`, `modelo`, `numero_serie`, `estado
 (4, 'Dockstation', 'Dell', 'D6000', '12312', 'Asignado', 'Madrid', '2024-04-12', '2027-04-12', 1),
 (5, 'Portátil', 'Asus', 'B1502', '123123', 'Baja', 'Almacén IT', '2026-05-22', '2029-05-22', 0),
 (6, 'Portátil', 'Asus', 'B1502', '123456789', 'Baja', 'Almacén IT', '0000-00-00', '0000-00-00', 0),
-(7, 'Monitor', 'asd', 'asd', 'asd', 'Baja', 'Almacén IT', '0000-00-00', '0000-00-00', 0),
-(9, 'Portátil', 'asd', 'asd', 'asdasdasd', 'Baja', 'Almacén IT', '0000-00-00', '0000-00-00', 0),
 (10, 'Móvil', 'Samsung', 'Galaxy A54', '32165416546546', 'Asignado', 'Amsterdam', '2026-05-15', '2028-05-15', 1),
-(11, 'Portátil', 'MSI', 'GL760', 'MeloInvento', 'Asignado', 'Madrid', '2026-02-28', '2029-02-28', 1);
+(12, 'Portátil', 'MSI', 'GL76 Pulse', '125348', 'Asignado', 'Zaragoza', '2024-04-12', '2027-04-12', 1);
 
 -- --------------------------------------------------------
 
@@ -143,7 +140,8 @@ INSERT INTO `trabajadores` (`id`, `nombre`, `apellidos`, `correo`, `telefono`, `
 (1, 'Juan', 'Pérez', 'juan.perez@empresa.com', '600111222', 'Marketing', 'Madrid', 1),
 (2, 'Ana prueba', 'López', 'ana.lopez@empresa.com', '600333444', 'Finanzas', 'Barcelona', 0),
 (3, 'Prueba 1', 'López', 'prueba1@asd.com', '123456789', 'Marketing', 'Barcelona', 1),
-(4, 'Petunia', 'Ramirez del Monte', 'lapetu@dominio.com', '123456789', 'Administración', 'Amsterdam', 1);
+(4, 'Petunia', 'Ramirez del Monte', 'lapetu@dominio.com', '123456789', 'Administración', 'Amsterdam', 1),
+(5, 'Eduardo', 'del Río Dominguez', 'edelrio@gmail.com', '650254691', 'Automoción', 'Zaragoza', 1);
 
 -- --------------------------------------------------------
 
@@ -171,11 +169,7 @@ INSERT INTO `usuarios` (`id`, `nombre`, `apellidos`, `email`, `password`, `rol_i
 (3, 'Carlos', 'IT', 'carlos@eazystock.com', '401cec94d3ed586d8cb895c10c0f7db6', 2, 1),
 (4, 'Marta', 'IT', 'marta@eazystock.com', '401cec94d3ed586d8cb895c10c0f7db6', 2, 1),
 (5, 'David', 'IT', 'david@eazystock.com', '401cec94d3ed586d8cb895c10c0f7db6', 2, 1),
-(6, 'pepito', 'Grillo asd', 'pepitogrillo@dominio.com', '32164702f8ffd2b418d780ff02371e4c', 2, 0),
-(7, 'asd', 'asd', 'asd@dominio.com', '7815696ecbf1c96e6894b779456d330e', 2, 0),
-(8, 'Jacinto', 'Hebrero Faustino', 'jhebrero@eazystock.com', '64663f4646781c9c0110838b905daa23', 2, 0),
-(9, 'asd', 'asd', 'asd@asd.com', 'a8f5f167f44f4964e6c998dee827110c', 1, 1),
-(10, 'jacinto', 'jacin', 'jacinto@jacinto.com', '0b87de5e9527b7b4c6a48aabb0c323c4', 2, 1);
+(11, 'Samuel', 'Kinghorn', 'skinghorn@gmail.com', '6051b063d62e17744b222f1b82c81e25', 2, 1);
 
 --
 -- Índices para tablas volcadas
@@ -231,7 +225,7 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `asignaciones`
 --
 ALTER TABLE `asignaciones`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT de la tabla `historial_material`
@@ -243,7 +237,7 @@ ALTER TABLE `historial_material`
 -- AUTO_INCREMENT de la tabla `material`
 --
 ALTER TABLE `material`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `roles`
@@ -255,13 +249,13 @@ ALTER TABLE `roles`
 -- AUTO_INCREMENT de la tabla `trabajadores`
 --
 ALTER TABLE `trabajadores`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas
